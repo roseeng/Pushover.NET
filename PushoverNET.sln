@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35913.81 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PushoverClient", "PushoverClient\PushoverClient.csproj", "{16E7D1FF-237A-4E89-94C6-FDDA36FBDDB0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{A5A31361-3EC5-4504-97BD-FD86E6792D90}"
@@ -10,9 +12,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{A5A313
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PushoverClient.Tests", "PushoverClient.Tests\PushoverClient.Tests.csproj", "{00C259B2-584F-4171-985C-A86498EACAAF}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendPush", "SendPush\SendPush.csproj", "{6DB8F6AB-5003-4E57-80D8-D8A626D525DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PushoverClient.Tests", "PushoverClient.Tests\PushoverClient.Tests.csproj", "{B6E1AA60-301A-49C2-9ADC-70AD49DF8F20}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,16 +26,19 @@ Global
 		{16E7D1FF-237A-4E89-94C6-FDDA36FBDDB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16E7D1FF-237A-4E89-94C6-FDDA36FBDDB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{16E7D1FF-237A-4E89-94C6-FDDA36FBDDB0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{00C259B2-584F-4171-985C-A86498EACAAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{00C259B2-584F-4171-985C-A86498EACAAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{00C259B2-584F-4171-985C-A86498EACAAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{00C259B2-584F-4171-985C-A86498EACAAF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6DB8F6AB-5003-4E57-80D8-D8A626D525DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6DB8F6AB-5003-4E57-80D8-D8A626D525DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6DB8F6AB-5003-4E57-80D8-D8A626D525DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6DB8F6AB-5003-4E57-80D8-D8A626D525DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6E1AA60-301A-49C2-9ADC-70AD49DF8F20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6E1AA60-301A-49C2-9ADC-70AD49DF8F20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6E1AA60-301A-49C2-9ADC-70AD49DF8F20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6E1AA60-301A-49C2-9ADC-70AD49DF8F20}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6A3C5D78-0626-4B72-8EC3-2D0F9279D17A}
 	EndGlobalSection
 EndGlobal

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Configuration;
+using System.Linq;
 using PushoverClient;
 
 namespace SendPush
@@ -12,48 +13,48 @@ namespace SendPush
             string appKey = ConfigurationManager.AppSettings["appKey"];
             string userGroupKey = ConfigurationManager.AppSettings["userGroupKey"];
 
-            //  Get the command line options
-            Options options = new Options();
-            if(CommandLine.Parser.Default.ParseArguments(args, options))
+            // Version without the commandline parser:
             {
-                //  If we didn't get the app key passed in, use the default:
-                if(string.IsNullOrEmpty(options.From))
+                if (args.Count() < 2)
                 {
-                    options.From = appKey;
+                    Console.Error.WriteLine("Usage: <title> <message> {<from>} {<user>}");
+                    Environment.Exit(1);
                 }
 
-                //  If we didn't get the user key passed in, use the default:
-                if(string.IsNullOrEmpty(options.User))
+                string optionsTitle = args[0];
+                string optionsMessage = args[1];
+
+                string optionsFrom;
+                //  If we didn't get the app key passed in, use the default:
+                if (args.Count() > 2 )
                 {
-                    options.User = userGroupKey;
+                    optionsFrom = args[2];
+                }
+                else
+                {
+                    optionsFrom = appKey;
+                }
+
+                string optionsUser;
+                //  If we didn't get the user key passed in, use the default:
+                if (args.Count() > 3)
+                {
+                    optionsUser = args[3]; ;
+                }
+                else
+                {
+                    optionsUser = userGroupKey;
                 }
 
                 //  Make sure we have our required items:
-                if(OptionsValid(options))
+                if (true)
                 {
                     //  Send the message
-                    Pushover pclient = new Pushover(options.From);
-                    PushResponse response = pclient.Push(options.Title, options.Message, options.User);
+                    Pushover pclient = new Pushover(optionsFrom);
+                    PushResponse response = pclient.Push(optionsTitle, optionsMessage, optionsUser);
                 }
-                else
-                    Console.WriteLine(options.GetUsage());
 
             }
-        }
-
-        static bool OptionsValid(Options options)
-        {
-            bool retval = false;
-
-            if(!string.IsNullOrEmpty(options.From) &&
-                !string.IsNullOrEmpty(options.User) &&
-                !string.IsNullOrEmpty(options.Title) &&
-                !string.IsNullOrEmpty(options.Message))
-            {
-                retval = true;
-            }
-
-            return retval;
         }
     }
 }
