@@ -11,7 +11,4 @@
     <Copyright>Copyright © Toshiba 2013</Copyright>
     <AssemblyVersion>1.0.%2a</AssemblyVersion>
   </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-  </ItemGroup>
 </Project>

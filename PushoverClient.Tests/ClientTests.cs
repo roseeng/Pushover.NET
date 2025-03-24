@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace PushoverClient.Tests
@@ -7,8 +8,8 @@ namespace PushoverClient.Tests
     [TestClass]
     public class ClientTests
     {
-        private const string TEST_APP_KEY = "YOURAPPKEY";
-        private const string TEST_USER_KEY = "YOURUSERKEY";
+        private const string TEST_APP_KEY = "av7687c73hw87ou75mwd8c9bb9iwt1"; //  "YOURAPPKEY";    
+        private const string TEST_USER_KEY = "untPRNMPAdJ822kSkqiBxKFDdP2wC3"; // "YOURUSERKEY";
 
         [TestMethod]
         public void PushWithValidParms_ReturnsSuccessful()
@@ -122,6 +123,24 @@ namespace PushoverClient.Tests
             //  Assert
             Assert.IsNotNull(response);
             Assert.AreEqual(1, response.Status);
+        }
+
+        [TestMethod]
+        public void TestJsonDeserialization()
+        {
+            string buf = "{\"status\":1,\"request\":\"822b0ffb-ac63-4c53-97a8-546647d8504c\"}";
+
+            // Compatibility with Newtonsoft.Json
+            var serializeOptions = new JsonSerializerOptions
+            {
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+            };
+
+            var response = System.Text.Json.JsonSerializer.Deserialize<PushResponse>(buf, serializeOptions);
+            
+            Assert.IsNotNull(response);
+            Assert.AreEqual(1, response.Status);
+            Assert.AreEqual("822b0ffb-ac63-4c53-97a8-546647d8504c", response.Request);
         }
     }
 }

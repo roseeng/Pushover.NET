@@ -1,8 +1,8 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.IO;
 using System.Net;
 using System.Net.Http;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace PushoverClient
@@ -211,10 +211,19 @@ namespace PushoverClient
 
         private async Task<PushResponse> ReadStreamAsync(Stream s)
         {
-            using (var sr = new StreamReader(s))
+            // Compatibility with Newtonsoft.Json
+            var serializeOptions = new JsonSerializerOptions
             {
-                return JsonConvert.DeserializeObject<PushResponse>(await sr.ReadToEndAsync());
-            }
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+            };
+
+            return await System.Text.Json.JsonSerializer.DeserializeAsync<PushResponse>(s, serializeOptions);
+
+            //using (var sr = new StreamReader(s))
+            //{
+            //    var buf = await sr.ReadToEndAsync();
+            //    return System.Text.Json.JsonSerializer.Deserialize<PushResponse>(buf);
+            //}
         }
     }
 }
