@@ -6,9 +6,25 @@
     <RestorePackages>true</RestorePackages>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <AssemblyTitle>PushoverClient</AssemblyTitle>
-    <Company>Toshiba</Company>
+    <Company></Company>
     <Product>PushoverClient</Product>
-    <Copyright>Copyright © Toshiba 2013</Copyright>
+    <Copyright></Copyright>
     <AssemblyVersion>1.0.%2a</AssemblyVersion>
+    <PackageId>pushoverDotnetCore</PackageId>
+    <Title>PushoverDotnetCore</Title>
+    <Description>Dotnet Core Wrapper for the Pushover API. 
+Pushover makes it easy to send real-time notifications to your Android and iOS devices with customized messages and sounds.</Description>
+    <PackageProjectUrl>https://github.com/roseeng/Pushover.NET</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/roseeng/Pushover.NET</RepositoryUrl>
+    <PackageTags>pushover push notifications api wrapper</PackageTags>
+    <Authors>danesparza</Authors>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 </Project>
