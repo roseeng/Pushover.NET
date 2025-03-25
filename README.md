@@ -1,4 +1,4 @@
-Pushover.NET  [![NuGet](https://img.shields.io/nuget/v/PushoverNET.svg)](https://www.nuget.org/packages/PushoverNET/)
+Pushover.NET  [![NuGet](https://img.shields.io/nuget/v/pushoverDotnetCore.svg)](https://www.nuget.org/packages/pushoverDotnetCore/)
 ============
 
 .NET Wrapper for the [Pushover](http://pushover.net) API.  Pushover makes it easy to send real-time notifications to your Android and iOS devices with customized messages and sounds.
