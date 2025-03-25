@@ -20,8 +20,13 @@ Pushover makes it easy to send real-time notifications to your Android and iOS d
     <PackageTags>pushover push notifications api wrapper</PackageTags>
     <Authors>danesparza</Authors>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageIcon>Pushover-P.png</PackageIcon>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="..\Pushover-P.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
     <None Include="..\README.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
