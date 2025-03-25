@@ -1,7 +1,9 @@
-Pushover.NET [![Build status](https://dev.azure.com/danesparza0161/Pushover.NET/_apis/build/status/Pushover.NET)](https://dev.azure.com/danesparza0161/Pushover.NET/_build/latest?definitionId=4) [![NuGet](https://img.shields.io/nuget/v/PushoverNET.svg)](https://www.nuget.org/packages/PushoverNET/)
+Pushover.NET  [![NuGet](https://img.shields.io/nuget/v/PushoverNET.svg)](https://www.nuget.org/packages/PushoverNET/)
 ============
 
 .NET Wrapper for the [Pushover](http://pushover.net) API.  Pushover makes it easy to send real-time notifications to your Android and iOS devices with customized messages and sounds.
+
+This is a fork of https://github.com/danesparza/Pushover.NET migrated to dotnet Core.
 
 ### Quick Start
 
